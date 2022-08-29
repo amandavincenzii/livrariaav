@@ -1,7 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import Categoria, Editora
-from core.serializers import CategoriaSerializer, EditoraSerializer
+from core.models import Autor, Categoria, Editora, Livro
+from core.serializers import CategoriaSerializer, EditoraSerializer, LivroDetailSerializer, LivroSerializer, AutorSerializer
+
 
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
@@ -11,5 +12,21 @@ class CategoriaViewSet(ModelViewSet):
 class EditoraViewSet(ModelViewSet):
     queryset = Editora.objects.all()
     serializer_class = EditoraSerializer
+class LivroViewSet(ModelViewSet):
+    queryset = Livro.objects.all()
+
+    def get_serializer_class(self):
+        if self.action in ['list', 'retrieve']:
+            return LivroDetailSerializer
+        return LivroSerializer
+class EditoraViewSet(ModelViewSet):
+    queryset = Editora.objects.all()
+    serializer_class = EditoraSerializer    
+
+class AutorViewSet(ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer
+
+
 
 # Create your views here.
