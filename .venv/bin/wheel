@@ -1,4 +1,4 @@
-#!/home/aluno/Documentos/Livraria_AmandaV/livrariaav/.venv/bin/python
+#!/home/aluno/Documentos/livrariaav/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
