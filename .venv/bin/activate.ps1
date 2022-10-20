@@ -42,11 +42,11 @@ if (!$env:VIRTUAL_ENV_DISABLE_PROMPT) {
     }
     $function:_old_virtual_prompt = $function:prompt
 
-    if ("" -ne "") {
+    if ("livrariaav-py3.8" -ne "") {
         function global:prompt {
             # Add the custom prefix to the existing prompt
             $previous_prompt_value = & $function:_old_virtual_prompt
-            ("" + $previous_prompt_value)
+            ("(livrariaav-py3.8) " + $previous_prompt_value)
         }
     }
     else {
