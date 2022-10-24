@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/home/aluno/Documentos/livrariaamanda/livrariaav/.venv/bin/python
+=======
+#!/home/aluno/livrariaav3tri/livrariaav/.venv/bin/python
+>>>>>>> c9bdfe09a5ba4211ac9e855428dee73c5079ac92
 # -*- coding: utf-8 -*-
 import re
 import sys
