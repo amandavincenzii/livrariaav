@@ -1,19 +1,18 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from core.models import Categoria, Editora, Autor, Livro, Usuario
 
+from core.models import Autor, Categoria, Editora, Livro, Usuario
+
+admin.site.register(Autor)
 admin.site.register(Categoria)
 admin.site.register(Editora)
-admin.site.register(Autor)
 admin.site.register(Livro)
-
 
 class UsuarioAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (_("Personal info"), {"fields": (
-            "first_name", "last_name", "email", "cpf", "telefone", "data_nascimento")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name", "email", "cpf", "telefone", "data_nascimento")}),
         (
             _("Permissions"),
             {
@@ -28,6 +27,5 @@ class UsuarioAdmin(UserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-
 
 admin.site.register(Usuario, UsuarioAdmin)
